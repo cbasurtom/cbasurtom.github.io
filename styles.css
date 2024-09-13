@@ -44,9 +44,9 @@ nav{
     font-size: 1.5rem;
 }
 a{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     text-decoration: none;
-    text-decoration-color: white;
+    text-decoration-color: rgb(0, 0, 0);
 }
 a:hover{
     color: rgb(229, 0, 83);
