@@ -227,11 +227,12 @@ section{
     color:white;
 }
 .btn-color-2{
-    background: rgb(229, 0, 83); 
+    background: rgb(229, 0, 83) !important;
+    color: black !important; 
 }
 
 .btn-color-2:hover {
-    background-color: white;  /* Maintain the hover effect */
+    background-color: white;  
     color: black;
 }
 
