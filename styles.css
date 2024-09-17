@@ -419,7 +419,6 @@ footer p{
 .typing-container {
     display: inline-block;
     position: relative;
-    font-family: monospace; /* Optional: for a more "typewriter" feel */
 }
 
 .cursor {
@@ -440,6 +439,5 @@ footer p{
 
 /* Additional styles to ensure proper display and functionality */
 #dynamic-text {
-    font-family: monospace;
     white-space: nowrap; /* Ensures the text stays on one line */
 }
