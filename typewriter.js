@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
             textElement.innerHTML = currentText;
 
             if (currentText === '') {
-                isDeleting = false;
+                isDeleting = false; // Start typing the next word
                 currentWordIndex = (currentWordIndex + 1) % words.length;
                 setTimeout(type, pauseAfterDeleting); // Wait before starting to type the next word
-                return; // Exit function after setting new word
+                return; // Exit to prevent multiple setTimeout calls
             }
         } else {
             currentText = fullText.substring(0, currentText.length + 1);
@@ -28,10 +28,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (currentText === fullText) {
                 setTimeout(() => isDeleting = true, pauseBeforeDeleting); // Wait before starting to delete
-                return; // Exit function after setting delete flag
+                return; // Exit to prevent multiple setTimeout calls
             }
         }
 
+        // Use the correct speed based on whether we are typing or deleting
         const speed = isDeleting ? deletingSpeed : typingSpeed;
         setTimeout(type, speed);
     }
