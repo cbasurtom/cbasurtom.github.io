@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (currentText === fullText) {
                 setTimeout(() => isDeleting = true, pauseBeforeDeleting); // Wait before starting to delete
+                return; // Exit function after setting deletion flag
             }
         }
 
