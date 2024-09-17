@@ -419,22 +419,27 @@ footer p{
 .typing-container {
     display: inline-block;
     position: relative;
-    font-size: 1.5rem; /* Ensure the font size matches your text */
+    font-family: monospace; /* Optional: for a more "typewriter" feel */
 }
 
 .cursor {
     display: inline-block;
-    width: 2px; /* Width of the cursor */
-    height: 1.5rem; /* Height of the cursor, should match the text */
-    background-color: white; /* Color of the cursor */
-    animation: blink 0.7s step-start infinite;
     position: absolute;
-    right: 0; /* Position cursor to the right of the text */
-    top: 0;
+    right: 0;
+    animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
+    from, to {
+        opacity: 1;
+    }
     50% {
         opacity: 0;
     }
+}
+
+/* Additional styles to ensure proper display and functionality */
+#dynamic-text {
+    font-family: monospace;
+    white-space: nowrap; /* Ensures the text stays on one line */
 }

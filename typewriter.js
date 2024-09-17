@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 isDeleting = false;
                 currentWordIndex = (currentWordIndex + 1) % words.length;
                 setTimeout(type, pauseAfterDeleting); // Wait before starting to type the next word
+                return; // Exit function after setting new word
             }
         } else {
             currentText = fullText.substring(0, currentText.length + 1);
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (currentText === fullText) {
                 setTimeout(() => isDeleting = true, pauseBeforeDeleting); // Wait before starting to delete
-                return; // Exit function after setting deletion flag
+                return; // Exit function after setting delete flag
             }
         }
 
