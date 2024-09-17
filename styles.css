@@ -228,7 +228,7 @@ section{
 }
 .btn-color-2{
     background: rgb(229, 0, 83);
-    color: black; 
+    color: white; 
 }
 
 .btn-color-2:hover {
@@ -418,24 +418,23 @@ footer p{
 /* typing animation*/
 .typing-container {
     display: inline-block;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: white; /* Or whatever color you prefer */
+    position: relative;
+    font-size: 1.5rem; /* Ensure the font size matches your text */
 }
 
 .cursor {
     display: inline-block;
-    font-weight: 600;
-    color: white;
-    animation: blink 0.7s infinite;
+    width: 2px; /* Width of the cursor */
+    height: 1.5rem; /* Height of the cursor, should match the text */
+    background-color: white; /* Color of the cursor */
+    animation: blink 0.7s step-start infinite;
+    position: absolute;
+    right: 0; /* Position cursor to the right of the text */
+    top: 0;
 }
 
-/* Blinking cursor animation */
 @keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    51%, 100% {
+    50% {
         opacity: 0;
     }
 }

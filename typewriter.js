@@ -1,39 +1,32 @@
-function typeWriter(elementId, words, speed) {
-    let i = 0;
-    let j = 0;
-    let currentWord = '';
+document.addEventListener('DOMContentLoaded', function () {
+    const textElement = document.getElementById('dynamic-text');
+    const words = ["compsci", "philo", "rambling"];
+    let currentWordIndex = 0;
+    let currentText = '';
     let isDeleting = false;
-    const element = document.getElementById(elementId);
+    let speed = 100; // Speed of typing/deleting in milliseconds
 
     function type() {
-        if (i < words.length) {
-            if (j < words[i].length) {
-                currentWord += words[i][j];
-                element.textContent = currentWord;
-                j++;
-                setTimeout(type, speed);
-            } else {
-                setTimeout(() => {
-                    isDeleting = true;
-                    type();
-                }, 1000); // Wait before starting to delete
-            }
-        } else if (isDeleting) {
-            if (currentWord.length > 0) {
-                currentWord = currentWord.slice(0, -1);
-                element.textContent = currentWord;
-                setTimeout(type, speed / 2); // Speed up deletion
-            } else {
-                isDeleting = false;
-                i = (i + 1) % words.length; // Move to the next word
-                setTimeout(type, 500); // Wait before starting to type the next word
-            }
+        const fullText = words[currentWordIndex];
+        
+        if (isDeleting) {
+            currentText = fullText.substring(0, currentText.length - 1);
+        } else {
+            currentText = fullText.substring(0, currentText.length + 1);
         }
+
+        textElement.innerHTML = currentText;
+
+        if (!isDeleting && currentText === fullText) {
+            setTimeout(() => isDeleting = true, 1000); // Wait 1 second before starting to delete
+        } else if (isDeleting && currentText === '') {
+            isDeleting = false;
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+            setTimeout(type, 500); // Wait before starting to type the next word
+        }
+
+        setTimeout(type, speed);
     }
 
-    type();
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    typeWriter('typewriter', ['compsci', 'philo', 'rambling'], 100);
+    type(); // Start typing effect
 });
