@@ -293,6 +293,10 @@ section{
     margin:auto 0;
 }
 
+.black-links a:hover {
+    color: rgb(229, 0, 83); 
+  }
+
 /*experience section*/
 
 #experience{
