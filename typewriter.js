@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const textElement = document.getElementById('dynamic-text');
-    const words = ["compsci", "philo", "rambling"];
+    const words = ["compsci ", "philo", "rambling"];
     let currentWordIndex = 0;
     let currentText = '';
     let isDeleting = false;
