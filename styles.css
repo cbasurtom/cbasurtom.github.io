@@ -219,18 +219,18 @@ section{
     border-radius: 2rem;
 }
 
-.btn-color-1:hover,.btn-color-2:hover{
+.btn-color-1:hover,.btn-color-2:hover, .btn-color3:hover{
     cursor:pointer;
+}
+.btn-color-1:hover{
+    background: rgb(229, 0, 83);
+    color:white;
 }
 .btn-color-2:hover{
     background: rgb(229, 0, 83);
     color:white;
 }
 .btn-color-3:hover{
-    background: rgb(229, 0, 83);
-    color:white;
-}
-.btn-color-1:hover{
     background: rgb(229, 0, 83);
     color:white;
 }
