@@ -226,13 +226,13 @@ section{
     background: rgb(229, 0, 83);
     color:white;
 }
-.btn-color-2:hover{
-    background: rgb(229, 0, 83);
-    color:white;
+.btn-color-2:hover {
+    background-color: white;  
+    color: black;
 }
 .btn-color-3:hover{
     background: rgb(229, 0, 83);
-    color:white;
+    color:black;
 }
 .btn-color-2{
     background: rgb(229, 0, 83);
@@ -241,11 +241,6 @@ section{
 .btn-color-3{
     background: rgb(50, 0, 229);
     color: white; 
-}
-
-.btn-color-2:hover {
-    background-color: white;  
-    color: black;
 }
 
 .btn-container{
